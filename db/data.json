@@ -1,0 +1,45 @@
+[
+
+    {
+        "user": {
+            "email": "chike.a@gmail.com",
+            "password": "something1"
+        },
+        "tip": {
+            "author": "chike",
+            "img": "",
+            "title": "chike title",
+            "city": "Boston",
+            "text": "xyz"
+        }
+    },
+
+    {
+        "user": {
+            "email": "eunice.b@gmail.com",
+            "password": "something2"
+        },
+        "tip": {
+            "author": "eunice",
+            "img": "",
+            "title": "eunice title",
+            "city": "SF",
+            "text": "xyz"
+        }
+    },
+
+    {
+        "user": {
+            "email": "tristan.c@gmail.com",
+            "password": "something3"
+        },
+        "tip": {
+            "author": "tristan",
+            "img": "",
+            "title": "tristan title",
+            "city": "Miami",
+            "text": "xyz"
+        }
+    }
+
+]
