@@ -1,4 +1,5 @@
 module.exports = {
     user: require('./user'),
-    channel: require('./channel')
+    channel: require('./channel'),
+    event: require('./event')
   }

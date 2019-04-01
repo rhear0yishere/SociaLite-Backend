@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const userRoutes = require('./routes/user');
 const channelRoutes = require('./routes/channel');
+const eventRoutes = require('./routes/event');
 const cors=  require ('cors');
 
 // Middleware
@@ -27,6 +28,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/user', userRoutes);
+app.use('/events', eventRoutes);
 app.use('/api/channel', channelRoutes);
 
 

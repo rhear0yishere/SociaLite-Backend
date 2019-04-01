@@ -15,10 +15,8 @@ module.exports = {
           let newEvent = new db.Event({
            title: req.body.title,
            location: req.body.location,
-           description: req.body.description, 
-           user: user.email
           });
-           newChannel.save(() =>{
+           newEvent.save(() =>{
             res.json(newEvent);
            });
         }
