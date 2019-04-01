@@ -8,13 +8,12 @@ module.exports = {
        })
     },
     postChannel: (req, res) =>{
-      db.User.findOne({email:req.body.email}, (err, user)=>{
+      db.User.findOne({}, (err, user)=>{
         if (err) {
          res.json({err: err, message: 'no dice!!!'})
         } else {
           let newChannel = new db.Channel({
-           name: req.body.name,
-           createdBy: email._id
+           name: req.body.name
           });
            newChannel.save(() =>{
             res.json(newChannel);

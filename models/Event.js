@@ -5,9 +5,11 @@ const User= require ('./User')
 const eventSchema = new mongoose.Schema({
   title: String,
   location: String,
-  description: String, 
-  user: [User.schema]
-
+  description: String,
+  createdBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User"
+  }
 })
 
 
