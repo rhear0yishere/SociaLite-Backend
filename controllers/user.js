@@ -4,6 +4,8 @@ const
     jwt = require('jsonwebtoken')
 
 module.exports = {
+
+
     signup: (req, res) => {
        db.User.find({
                 email: req.body.email
@@ -113,30 +115,12 @@ module.exports = {
             })
     },
     findUser: (req, res) => {
-        console.log('trigger Show', req.userId)
-        let tip = {gk}
-        if (req.userId) {
-            db.Tip.create(req.userId, (err, foundUser) => {
-                res.json(foundUser);
-            })
-        } else {
-            res.json('No user Id provided')
-        }
-    },
-    deleteUser: (req, res) => {
-        console.log("hitting delete");
-        db.User.deleteOne({
-            _id: req.params.userId
-        }, (err, result) => {
-            if (err) {
-                return res.status(500).json({
-                    err
-                })
-            }
-            res.status(200).json({
-                result
-            })
-        })
-    }
+        db.User.find((err, foundUsers) => {
+          if (err) {
+            console.log(err);
+          }
+          res.json(foundUsers);
+        });
+      }
 }
 

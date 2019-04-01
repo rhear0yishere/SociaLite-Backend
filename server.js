@@ -29,5 +29,6 @@ app.get('/', (req, res) => {
 app.use('/user', userRoutes);
 app.use('/api/channel', channelRoutes);
 
+
 app.listen(3001, () => console.log("Listening on 3001"))
  

@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const Channel = require ('./Channel')
+const Schema = mongoose.Schema;
 
 const userSchema = new mongoose.Schema({
   email: { 

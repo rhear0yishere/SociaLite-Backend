@@ -8,12 +8,13 @@ module.exports = {
        })
     },
     postChannel: (req, res) =>{
-      db.User.findOne({}, (err, user)=>{
+      db.User.findOne({email:req.body.email}, (err, user)=>{
         if (err) {
          res.json({err: err, message: 'no dice!!!'})
         } else {
           let newChannel = new db.Channel({
-           name: req.body.name
+           name: req.body.name,
+           createdBy: email._id
           });
            newChannel.save(() =>{
             res.json(newChannel);
@@ -21,6 +22,13 @@ module.exports = {
         }
       });
     },
+    // postChannel: (req, res) =>{
+    //   let newChannel = new db.Channel({
+    //     name: req.body.name,
+    //     createdBy:req.body.createdBy
+
+    //   })
+    // },
     updateTip: (req, res)=> {
       let data = JSON.parse(req.params.data);
 
