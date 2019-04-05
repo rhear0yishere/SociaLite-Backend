@@ -32,5 +32,6 @@ app.use('/events', eventRoutes);
 app.use('/api/channel', channelRoutes);
 
 
+
 app.listen(3001, () => console.log("Listening on 3001"))
  

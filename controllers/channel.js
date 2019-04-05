@@ -21,6 +21,23 @@ module.exports = {
         }
       });
     },
+    
+    // show(req, res) {
+    //   db.Channel.findById(req.params.channel_id, function(err, channel){
+    //     if (err) res.send(err);
+    //     else res.json(post);
+    //   });  
+    // }
+
+    show: (req, res) => {
+      db.Channel.findById(req.params.channel_id, function(err, channel){
+        if (err) res.send(err);
+        else res.json(channel);
+      }) 
+
+    },
+
+    
     // postChannel: (req, res) =>{
     //   let newChannel = new db.Channel({
     //     name: req.body.name,
