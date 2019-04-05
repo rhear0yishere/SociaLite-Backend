@@ -5,14 +5,16 @@ const
     channelControllers = require('../controllers/channel');
     jwt = require('jsonwebtoken');
     eventControllers = require('../controllers/event');
-
-    
+    postControllers = require('../controllers/post');
 
 
     router.get('/', channelControllers.findAllChannels);
     router.get('/:channel_id', channelControllers.show);
     router.post('/', channelControllers.postChannel);
     router.post('/:channel_id/events', eventControllers.postEvent);
+    router.post('/:channel_id/events/:event_id/posts', postControllers.makePost);
+
+
 
     // router.delete('/:tipId', tipControllers.deleteTip);
     // router.put('/:data', tipControllers.updateTip);
