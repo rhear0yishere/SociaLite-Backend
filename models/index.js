@@ -7,4 +7,6 @@ mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/jwt-auth", {
 module.exports = {User: require('./User'), 
                   Channel: require('./Channel'),
                 Event: require('./Event'),
-              Post:require('./Post')}
+              Post:require('./Post'),
+              Comment: require('./Comment')
+              }

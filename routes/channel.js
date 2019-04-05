@@ -6,6 +6,7 @@ const
     jwt = require('jsonwebtoken');
     eventControllers = require('../controllers/event');
     postControllers = require('../controllers/post');
+    commentControllers = require('../controllers/comment');
 
 
     router.get('/', channelControllers.findAllChannels);
@@ -13,6 +14,8 @@ const
     router.post('/', channelControllers.postChannel);
     router.post('/:channel_id/events', eventControllers.postEvent);
     router.post('/:channel_id/events/:event_id/posts', postControllers.makePost);
+    router.post('/:channel_id/events/:event_id/posts/:post_id/comments', commentControllers.makeComment);
+
 
 
 
