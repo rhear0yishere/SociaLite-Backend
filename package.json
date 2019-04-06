@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Wayfarer-project ",
   "main": "server.js",
+  "engines": {
+    "node": "11.9.0"
+  },
 
   "scripts": {
     "start": "node src/index.js",
