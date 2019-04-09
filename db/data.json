@@ -1,0 +1,14 @@
+[
+
+    {
+        "user": {
+            "email": "rhea.a@gmail.com",
+            "password": "something1"
+        },
+        "channel": {
+            "name": "TEST CHANNEL"
+        
+        }
+    }
+
+]

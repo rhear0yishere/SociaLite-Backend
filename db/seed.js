@@ -1,36 +1,21 @@
-const db  = require('../models/');
-let data = require('./data'); 
+var models = require('../models');
 
-data.forEach((tipData, i)=>{
+var commentsData = [{
+  content: 'Comment A',
+  votes: 6
+}, {
+  content: 'Comment B',
+  votes: 3
+}, {
+  content: 'Comment C',
+  votes: 12
+}];
 
-    let user = new db.User({
-        email: tipData.user.email, 
-        password: tipData.user.password
-    });
-   
-    user.save();
-    
-    db.User.find({email: tipData.user.email}, (err, user)=>{
-        
-       let newTip =  {
-                    author: tipData.tip.author,
-                   img: tipData.tip.img,
-                   city: tipData.tip.city,
-                   text: tipData.tip.text,
-                   title: tipData.tip.title
-       }
-       let tip = new db.Tip(newTip);
-       tip.save();
-    })
-});   
+models.Channel.remove({}, function(err, res) {
+  if (err) {
+    console.log('Error removing comments: ', err);
+    return;
+  }
+  console.log('Removed all Comments');
 
-
-db.Tip.find({}, (err, tips)=>{
-  console.log(tips);
-})
-
-db.User.find({}, (err, users)=>{
-    console.log(users);
-    process.exit();
-
-})
+});
