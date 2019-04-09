@@ -22,13 +22,7 @@ module.exports = {
       });
     },
     
-    // show(req, res) {
-    //   db.Channel.findById(req.params.channel_id, function(err, channel){
-    //     if (err) res.send(err);
-    //     else res.json(post);
-    //   });  
-    // }
-
+  
     show: (req, res) => {
       db.Channel.findById(req.params.channel_id, function(err, channel){
         if (err) res.send(err);
@@ -38,53 +32,10 @@ module.exports = {
     },
 
     
-    // postChannel: (req, res) =>{
-    //   let newChannel = new db.Channel({
-    //     name: req.body.name,
-    //     createdBy:req.body.createdBy
-
-    //   })
-    // },
-    updateTip: (req, res)=> {
-      let data = JSON.parse(req.params.data);
-
-      db.Tip.findById(data.tipId, (err, tip)=>{
-        if (err) {
-         res.json({err: err, message: 'Error: No tip found'})
-        } else {
-            tip.text = data.text;
-
-            tip.save((err)=>{
-              if(err) {
-                return console.log(err);
-              }
-              res.json(tip);
-            });
-        }
-      })
-    },
-    deleteTip: (req, res) => {
-      db.Tip.findOneAndDelete({_id: req.params.tipId}, (err, tip)=>{
-        if (err) {
-         res.json({err: err, message: 'Tip not deleted!!'});
-        } else {
-          if (!tip) {
-            res.json({message: 'cant find the tip!!!'}) 
-          } else {
-            tip.save((err, deletedTip) =>{
-              res.json({message: 'deleted', tip: deletedTip});
-             });
-          }
-        }
-      });
-    },
-    findTipsByCity: (req, res) => {
-      db.Tip.find({city: req.params.city}, (err, tips)=>{
-        if (err) {
-         res.json({err: err, message: 'Error! Did not find tips!!!'})
-        } else {
-         res.json(tips);         
-        }
-      });
+    deleteChannel: (req, res) => {
+      db.Channel.findByIdAndRemove(req.params.channel_id, function(err, post){
+        if (err) res.send(err);
+        else res.send("channel deleted");
+      }); 
     }
 }
