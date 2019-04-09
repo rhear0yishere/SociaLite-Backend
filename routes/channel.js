@@ -10,19 +10,21 @@ const
 
 
     router.get('/', channelControllers.findAllChannels);
+
     router.get('/:channel_id', channelControllers.show);
+
     router.delete('/:channel_id', channelControllers.deleteChannel);
+
     router.post('/', channelControllers.postChannel);
+    router.post('/:channel_id/events/:event_id', eventControllers.deleteEvent);
     router.post('/:channel_id/events', eventControllers.postEvent);
+
+
     router.post('/:channel_id/events/:event_id/posts', postControllers.makePost);
+    
     router.post('/:channel_id/events/:event_id/posts/:post_id/comments', commentControllers.makeComment);
 
 
-
-
-    // router.delete('/:tipId', tipControllers.deleteTip);
-    // router.put('/:data', tipControllers.updateTip);
-   
     // router.use((req, res, next) => {
     //     console.log('activated')
     //     const bearerHeader = req.headers['authorization'];

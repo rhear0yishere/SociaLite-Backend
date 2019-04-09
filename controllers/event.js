@@ -28,6 +28,35 @@ module.exports = {
        })
     },
 
+    deleteEvent: (req, res) => {
+      let channelId = req.params.channel_id
+      let eventId = req.params.event_id 
+      db.Channel.findById(channelId, function(err, foundChannel){
+        if(err){res.status(500).send(err);}
+        let foundEvent = foundChannel.events;
+        console.log(foundEvent, "EVENTS")
+        console.log(foundEvent[0]._id, "ID ?")
+        for (i in foundEvent){
+          if(foundEvent[i]._id == eventId){
+            foundEvent.splice(i,1)
+          }
+        }
+        foundChannel.save()
+
+      }); 
+    }
+
+
+    
+
+
+
+
+        
+
+
+     
+
 }//end of exports 
 
 
