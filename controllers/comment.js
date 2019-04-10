@@ -28,10 +28,3 @@ module.exports = {
 }
 
 }//end of exports 
-
-
-           //   if (channel.events[i]._id== req.params.event_id){
-                //     channel.events[i].posts.push(newPost);
-                //     channel.save();
-                //     res.json(newPost);
-                //   }
