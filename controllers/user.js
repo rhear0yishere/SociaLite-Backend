@@ -4,6 +4,22 @@ const
     jwt = require('jsonwebtoken')
 
 module.exports = {
+
+ deleteUserChannel: (req, res) => {
+      let userId = req.params.user_id
+      let addChannelId = req.params.addchannel_id 
+      db.User.findById(userId, function(err, user){
+        if(err){res.status(500).send(err);}
+        let foundChannel = user.userChannels;
+        for (i in foundChannel){
+          if(foundChannel[i].addChannel == addChannelId){
+            foundChannel.splice(i,1)
+          }
+        }
+        user.save()
+
+      }); 
+    },
     
 
     addChanneltoUser: (req, res) =>{

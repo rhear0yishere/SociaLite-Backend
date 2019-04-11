@@ -14,6 +14,9 @@ router.get('/', userControllers.findUser);
 
 router.post('/login/:user_id', userControllers.addChanneltoUser);
 
+router.post('/login/:user_id/:addchannel_id', userControllers.deleteUserChannel);
+
+
 
 
 
