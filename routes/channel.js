@@ -10,12 +10,11 @@ const
 
 
     router.get('/', channelControllers.findAllChannels);
-
     router.get('/:channel_id', channelControllers.show);
-
     router.delete('/:channel_id', channelControllers.deleteChannel);
-
     router.post('/', channelControllers.postChannel);
+
+
     router.post('/:channel_id/events/:event_id', eventControllers.deleteEvent);
     router.post('/:channel_id/events', eventControllers.postEvent);
     router.post('/:channel_id/events/:event_id/edit', eventControllers.editEvent);
