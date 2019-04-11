@@ -12,6 +12,9 @@ router.post('/login', userControllers.login);
 
 router.get('/', userControllers.findUser);
 
+router.post('/login/:user_id', userControllers.addChanneltoUser);
+
+
 
 
 router.use((req, res, next) => {

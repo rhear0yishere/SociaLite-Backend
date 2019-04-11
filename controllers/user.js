@@ -4,7 +4,23 @@ const
     jwt = require('jsonwebtoken')
 
 module.exports = {
+    
 
+    addChanneltoUser: (req, res) =>{
+        let newUserChannel= ({
+            addChannel: req.body.addChannel
+          })
+          let userId = req.params.user_id;
+            db.User.findById(userId, function(err, user) {
+              if (err) res.send(err);
+                else {
+                  user.userChannels.push(newUserChannel);
+                  user.save();
+                  res.json(newUserChannel);
+                    }
+                  }) 
+          
+    },
 
     signup: (req, res) => {
        db.User.find({
