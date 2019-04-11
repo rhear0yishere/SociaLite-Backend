@@ -27,9 +27,9 @@ app.use(function(req, res, next) {
   next();
 });
 
-// app.get('/', (req, res) => {
-//   res.sendFile(__dirname + '/views/index.html');
-// })
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/views/index.html');
+})
 
 app.use('/user', userRoutes);
 app.use('/events', eventRoutes);
