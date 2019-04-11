@@ -7,6 +7,8 @@ const eventSchema = new mongoose.Schema({
   location: String,
   term: String,
   image: String,
+  date: String, 
+  time:String, 
   posts: [Post.schema]
 })
 
