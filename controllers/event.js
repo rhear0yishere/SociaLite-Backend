@@ -12,8 +12,8 @@ module.exports = {
           location: req.body.location,
           term: req.body.term,
           image: req.body.image,
-          time: this.body.time,
-          date: this.body.date
+          time: req.body.time,
+          date: req.body.date
         })
         let channelId = req.params.channel_id;
           db.Channel.findById(channelId, function(err, channel) {
