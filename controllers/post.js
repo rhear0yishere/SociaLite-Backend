@@ -8,6 +8,7 @@ module.exports = {
   makePost: (req, res) =>{
         let newPost= new db.Post({
           text: req.body.text,
+          image: req.body.image
         })
         let channelId = req.params.channel_id;
           db.Channel.findById(channelId, function(err, channel) {
