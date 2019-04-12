@@ -22,7 +22,8 @@ const
 
 
     router.post('/:channel_id/events/:event_id/posts', postControllers.makePost);
-    
+    router.post('/:channel_id/events/:event_id/posts/:post_id', postControllers.deletePost);
+
     router.post('/:channel_id/events/:event_id/posts/:post_id/comments', commentControllers.makeComment);
 
 
